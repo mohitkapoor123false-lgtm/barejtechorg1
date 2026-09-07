@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── DESIGN TOKENS & BACKGROUND ── */
+:root {
+  --bg: #D6E8FF;
+  --bg2: #CCDFF7;
+  --bg3: #BDD2F0;
+  --card: #FFFFFF;
+  --text: #0F172A;
+  --nav-bg: rgba(214, 232, 255, 0.92);
+}
+
+[data-theme="dark"],
+.dark {
+  --bg: #0A1628;
+  --bg2: #0D1E35;
+  --bg3: #112240;
+  --card: #0F1C30;
+  --text: #E8F0FE;
+  --nav-bg: rgba(10, 22, 40, 0.92);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse 70% 40% at 10% -5%, rgba(79, 70, 229, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 35% at 90% 105%, rgba(14, 165, 233, 0.05) 0%, transparent 60%);
+  background-attachment: fixed;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+[data-theme="dark"] body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(79, 70, 229, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(14, 165, 233, 0.07) 0%, transparent 60%);
+  background-attachment: fixed;
+}
